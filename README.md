@@ -2,7 +2,7 @@
 
 The Pact Standalone public homebrew tap for MacOS / Linux homebrew formulae.
 
-The easier way to install [`pact-ruby-standalone`](https://github.com/pact-foundation/pact-standalone) bundle of tools on your macOS/Linux machine using Homebrew.
+The easier way to install [`pact-standalone`](https://github.com/pact-foundation/pact-standalone) bundle of tools on your macOS/Linux machine using Homebrew.
 
 ## Installation
 
@@ -22,15 +22,17 @@ The easier way to install [`pact-ruby-standalone`](https://github.com/pact-found
 ## Included tools
 
 ```
-  pact --help
-  pact-broker --help
-  pact-broker --help
-  pact-message --help
-  pact-mock-service --help
-  pact-plugin-cli --help
-  pact-provider-verifier --help
-  pact-stub-service --help
-  pactflow --help
+├── pact (central entry point to all binaries)
+├── pact-broker
+├── pactflow
+├── pact_mock_server_cli
+├── pact-stub-server
+├── pact_verifier_cli
+├── pact-plugin-cli
+├── pact-message (legacy)
+├── pact-mock-service (legacy)
+├── pact-provider-verifier (legacy)
+└── pact-stub-service (legacy)
 ```
 
 ### Previous versions
