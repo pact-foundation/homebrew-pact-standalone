@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-homepage="https://github.com/pact-foundation/pact-ruby-standalone"
+homepage="https://github.com/pact-foundation/pact-standalone"
 version=$1
-FORMULAE_FILE="pact-ruby-standalone.rb"
+FORMULAE_FILE="pact-standalone.rb"
 
 write_homebrew_formulae() {
     if [ ! -f "$FORMULAE_FILE" ] ; then
@@ -13,8 +13,8 @@ write_homebrew_formulae() {
     fi
 
      exec 3<> $FORMULAE_FILE
-        echo "class PactRubyStandalone < Formula" >&3
-        echo "  desc \"Standalone pact CLI executable using the Ruby Pact impl and Travelling Ruby\"" >&3
+        echo "class PactStandalone < Formula" >&3
+        echo "  desc \"Standalone pact CLI executable using the Ruby Pact impl and Traveling Ruby\"" >&3
         echo "  homepage \"$homepage\"" >&3
         echo "  version \"$version\"" >&3
         echo "  on_macos do" >&3
@@ -39,7 +39,7 @@ write_homebrew_formulae() {
         echo "  end" >&3
         echo "" >&3
         echo "  def install" >&3
-        echo "    # pact-ruby-standalone" >&3
+        echo "    # pact-standalone" >&3
         echo "    bin.install Dir[\"bin/*\"]" >&3
         echo "    lib.install Dir[\"lib/*\"]" >&3
         echo "    puts \"# Run 'pact-mock-service --help' (see $homepage/releases/)\"" >&3
@@ -68,7 +68,7 @@ display_usage() {
 }
 
 if [[ $# -eq 0 ]] ; then
-    echo "🚨 Please supply the pact-ruby-standalone version to upgrade to"
+    echo "🚨 Please supply the pact-standalone version to upgrade to"
     display_usage
     exit 1
 elif [[ $1 == "--help" ||  $1 == "-h" ]] ; then

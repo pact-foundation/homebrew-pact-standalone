@@ -30,21 +30,21 @@ jobs:
       - name: Install tap
         if: matrix.os != 'macos-14'
         run: |
-          brew tap pact-foundation/pact-ruby-standalone
-          cd $(brew --prefix)/Homebrew/Library/Taps/pact-foundation/homebrew-pact-ruby-standalone/
+          brew tap pact-foundation/pact-standalone
+          cd $(brew --prefix)/Homebrew/Library/Taps/pact-foundation/homebrew-pact-standalone/
           git checkout ${{ github.sha }}
-          brew install --verbose --debug pact-ruby-standalone
+          brew install --verbose --debug pact-standalone
       - name: Install tap
         if: matrix.os == 'macos-14'
         run: |
-          brew tap pact-foundation/pact-ruby-standalone
-          cd $(brew --prefix)/Library/Taps/pact-foundation/homebrew-pact-ruby-standalone/
+          brew tap pact-foundation/pact-standalone
+          cd $(brew --prefix)/Library/Taps/pact-foundation/homebrew-pact-standalone/
           git checkout ${{ github.sha }}
-          brew install --verbose --debug pact-ruby-standalone
+          brew install --verbose --debug pact-standalone
 
       - name: Brew test tap
         run: |
-          brew test pact-ruby-standalone
+          brew test pact-standalone
 
       - name: Test tap
         run: |
@@ -60,4 +60,4 @@ jobs:
 
       - name: Audit tap
         run: |
-          brew audit --strict --online pact-ruby-standalone
+          brew audit --strict --online pact-standalone
